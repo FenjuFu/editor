@@ -1,0 +1,2962 @@
+{
+    "count":  178,
+    "files":  [
+                  {
+                      "file":  "packages/editor/src/components/ui/floating-level-selector.tsx",
+                      "count":  1
+                  },
+                  {
+                      "file":  "packages/editor/src/components/ui/panels/multi-parametric-inspector.tsx",
+                      "count":  1
+                  },
+                  {
+                      "file":  "packages/editor/src/components/ui/panels/parametric-field-control.tsx",
+                      "count":  1
+                  },
+                  {
+                      "file":  "packages/editor/src/components/ui/panels/reference-panel.tsx",
+                      "count":  3
+                  },
+                  {
+                      "file":  "packages/editor/src/components/ui/sidebar/panels/site-panel/index.tsx",
+                      "count":  1
+                  },
+                  {
+                      "file":  "packages/nodes/src/box-vent/panel.tsx",
+                      "count":  13
+                  },
+                  {
+                      "file":  "packages/nodes/src/ceiling/panel.tsx",
+                      "count":  1
+                  },
+                  {
+                      "file":  "packages/nodes/src/chimney/panel.tsx",
+                      "count":  25
+                  },
+                  {
+                      "file":  "packages/nodes/src/cupola/panel.tsx",
+                      "count":  6
+                  },
+                  {
+                      "file":  "packages/nodes/src/door/panel.tsx",
+                      "count":  21
+                  },
+                  {
+                      "file":  "packages/nodes/src/dormer/panel-position-section.tsx",
+                      "count":  2
+                  },
+                  {
+                      "file":  "packages/nodes/src/dormer/panel.tsx",
+                      "count":  4
+                  },
+                  {
+                      "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                      "count":  6
+                  },
+                  {
+                      "file":  "packages/nodes/src/fence/inspector-editors.tsx",
+                      "count":  1
+                  },
+                  {
+                      "file":  "packages/nodes/src/item/panel.tsx",
+                      "count":  3
+                  },
+                  {
+                      "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                      "count":  6
+                  },
+                  {
+                      "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                      "count":  13
+                  },
+                  {
+                      "file":  "packages/nodes/src/roof/panel.tsx",
+                      "count":  3
+                  },
+                  {
+                      "file":  "packages/nodes/src/skylight/panel.tsx",
+                      "count":  12
+                  },
+                  {
+                      "file":  "packages/nodes/src/slab/panel.tsx",
+                      "count":  4
+                  },
+                  {
+                      "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                      "count":  7
+                  },
+                  {
+                      "file":  "packages/nodes/src/spawn/panel.tsx",
+                      "count":  3
+                  },
+                  {
+                      "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                      "count":  7
+                  },
+                  {
+                      "file":  "packages/nodes/src/stair/panel.tsx",
+                      "count":  10
+                  },
+                  {
+                      "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                      "count":  6
+                  },
+                  {
+                      "file":  "packages/nodes/src/window/panel.tsx",
+                      "count":  18
+                  }
+              ],
+    "invariants":  "Only meter value expressions lose redundant Math.round(x * scale) / scale. All other JSX props, handlers, units, bounds, steps, precision, and all non-meter control attributes are byte-for-byte preserved.",
+    "controls":  [
+                     {
+                         "file":  "packages/editor/src/components/ui/floating-level-selector.tsx",
+                         "line":  239,
+                         "label":  "\"Level height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(storeyHeight * 1000) / 1000}",
+                         "after":  "{storeyHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e updateNode(level.id, { height: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{1}",
+                                           "max":  "{20}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/editor/src/components/ui/panels/multi-parametric-inspector.tsx",
+                         "line":  240,
+                         "label":  "{label}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(axisValue * 100) / 100}",
+                         "after":  "{axisValue}",
+                         "preserved":  {
+                                           "onChange":  "{(next) =\u003e previewMultiNodeFields(patchAxis(next))}",
+                                           "onCommit":  "{(next) =\u003e {\r\n              const entries = patchAxis(next)\r\n              commitMultiNodeFields(\r\n                nodeIds,\r\n                (node) =\u003e entries.find(([id]) =\u003e id === node.id)?.[1] ?? {},\r\n                parametrics,\r\n              )\r\n            }}",
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/editor/src/components/ui/panels/parametric-field-control.tsx",
+                         "line":  152,
+                         "label":  "{label}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(axisValue * 100) / 100}",
+                         "after":  "{axisValue}",
+                         "preserved":  {
+                                           "onChange":  "{(next) =\u003e onChange(apply(next))}",
+                                           "onCommit":  "{onCommit ? (next) =\u003e onCommit(apply(next)) : undefined}",
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/editor/src/components/ui/panels/reference-panel.tsx",
+                         "line":  363,
+                         "label":  "{\r\n            \u003c\u003e\r\n              X\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[0] = value\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  "{-50}",
+                                           "max":  "{50}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/editor/src/components/ui/panels/reference-panel.tsx",
+                         "line":  381,
+                         "label":  "{\r\n            \u003c\u003e\r\n              Y\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[1] = value\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  "{-50}",
+                                           "max":  "{50}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/editor/src/components/ui/panels/reference-panel.tsx",
+                         "line":  399,
+                         "label":  "{\r\n            \u003c\u003e\r\n              Z\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[2] = value\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  "{-50}",
+                                           "max":  "{50}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/editor/src/components/ui/sidebar/panels/site-panel/index.tsx",
+                         "line":  946,
+                         "label":  "\"Base elevation\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((level.baseElevation ?? 0) * 100) / 100}",
+                         "after":  "{(level.baseElevation ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e updateNode(level.id, { baseElevation: value })}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  186,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "min":  "{0.15}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  198,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.depth * 100) / 100}",
+                         "after":  "{node.depth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ depth: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ depth: v })}",
+                                           "min":  "{0.15}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  210,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "min":  "{0.05}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  227,
+                         "label":  "\"Hood Overhang\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.hoodOverhang ?? 0) * 1000) / 1000}",
+                         "after":  "{(node.hoodOverhang ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ hoodOverhang: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ hoodOverhang: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{Math.max(0.02, node.width)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  242,
+                         "label":  "\"Base Inset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.baseInset ?? 0.06) * 1000) / 1000}",
+                         "after":  "{(node.baseInset ?? 0.06)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ baseInset: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ baseInset: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{Math.max(0.005, Math.min(node.width, node.depth) / 2 - 0.005)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  254,
+                         "label":  "\"Base Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.baseHeight ?? 0.04) * 1000) / 1000}",
+                         "after":  "{(node.baseHeight ?? 0.04)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ baseHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ baseHeight: v })}",
+                                           "min":  "{0.005}",
+                                           "max":  "{Math.max(0.01, node.height - 0.005)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  266,
+                         "label":  "\"Corner Bevel\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.cornerBevel ?? 0.012) * 1000) / 1000}",
+                         "after":  "{(node.cornerBevel ?? 0.012)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ cornerBevel: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ cornerBevel: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{Math.max(\r\n                0,\r\n                Math.min(node.width, node.depth) / 2 - (node.baseInset ?? 0.06) - 0.001,\r\n              )}",
+                                           "step":  "{0.002}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  285,
+                         "label":  "\"Cap Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.capHeight ?? 0.07) * 1000) / 1000}",
+                         "after":  "{(node.capHeight ?? 0.07)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ capHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ capHeight: v })}",
+                                           "min":  "{0.01}",
+                                           "max":  "{Math.max(0.02, node.height - 0.01)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  297,
+                         "label":  "\"Gap Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.capGap ?? 0) * 1000) / 1000}",
+                         "after":  "{(node.capGap ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ capGap: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ capGap: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{Math.max(0, node.height - Math.max(0.01, node.capHeight ?? 0.07) - 0.005)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  337,
+                         "label":  "\"Base Flange\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.hoodOverhang ?? 0.04) * 1000) / 1000}",
+                         "after":  "{(node.hoodOverhang ?? 0.04)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ hoodOverhang: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ hoodOverhang: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  354,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[0] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[0] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({\r\n              position: [v, node.position[1] ?? 0, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [v, node.position[1] ?? 0, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  374,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[1] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[1] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({\r\n              position: [node.position[0] ?? 0, v, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [node.position[0] ?? 0, v, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "min":  "{Math.min(0, (node.position[1] ?? 0) - 0.5)}",
+                                           "max":  "{Math.max(\r\n            (segment?.wallHeight ?? 3) + (segment ? getActiveRoofHeight(segment) : 3) + 2,\r\n            (node.position[1] ?? 0) + 0.1,\r\n          )}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/box-vent/panel.tsx",
+                         "line":  397,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[2] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[2] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({\r\n              position: [node.position[0] ?? 0, node.position[1] ?? 0, v],\r\n            })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [node.position[0] ?? 0, node.position[1] ?? 0, v],\r\n            })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ceiling/panel.tsx",
+                         "line":  261,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.height ?? resolvedHeight) * 1000) / 1000}",
+                         "after":  "{(node.height ?? resolvedHeight)}",
+                         "preserved":  {
+                                           "onChange":  "{handleHeightChange}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{Math.min(1000, maxHeight)}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  370,
+                         "label":  "{(node.bodyShape ?? \u0027square\u0027) === \u0027round\u0027 ? \u0027Diameter\u0027 : \u0027Width\u0027}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ width: v })}",
+                                           "min":  "{0.2}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  383,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.depth * 100) / 100}",
+                         "after":  "{node.depth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ depth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ depth: v })}",
+                                           "min":  "{0.2}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  396,
+                         "label":  "\"Hollow Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.bodyHollowDepth ?? 0.6) * 100) / 100}",
+                         "after":  "{(node.bodyHollowDepth ?? 0.6)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ bodyHollowDepth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ bodyHollowDepth: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{3}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  408,
+                         "label":  "\"Wall Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.bodyHollowMargin ?? 0.08) * 1000) / 1000}",
+                         "after":  "{(node.bodyHollowMargin ?? 0.08)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ bodyHollowMargin: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ bodyHollowMargin: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  421,
+                         "label":  "\"Corner Bevel\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.cornerBevel ?? 0) * 1000) / 1000}",
+                         "after":  "{(node.cornerBevel ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ cornerBevel: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ cornerBevel: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{Math.max(0, Math.min(node.width, node.depth) / 2 - 0.005)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  437,
+                         "label":  "\"Above Ridge\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.heightAboveRidge * 100) / 100}",
+                         "after":  "{node.heightAboveRidge}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ heightAboveRidge: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ heightAboveRidge: v })}",
+                                           "min":  "{0.1}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  449,
+                         "label":  "\"Cutout Offset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.cutoutOffset ?? 0) * 1000) / 1000}",
+                         "after":  "{(node.cutoutOffset ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ cutoutOffset: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ cutoutOffset: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.5}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  464,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(worldX_now * 100) / 100}",
+                         "after":  "{worldX_now}",
+                         "preserved":  {
+                                           "onChange":  "{(newWorldX) =\u003e {\r\n            // Live preview: keep the chimney parented to its current segment\r\n            // and update its segment-local position so the visual matches the\r\n            // dragged world X. Reparenting (if any) happens on commit.\r\n            if (!segment) return\r\n            const local = worldToSegLocal(newWorldX, worldZ_now, segment)\r\n            previewProp({ position: [local.localX, 0, local.localZ] })\r\n          }}",
+                                           "onCommit":  "{(newWorldX) =\u003e commitWorldPosition(newWorldX, worldZ_now)}",
+                                           "min":  "{Math.round(worldMinX * 10) / 10}",
+                                           "max":  "{Math.round(worldMaxX * 10) / 10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  483,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(worldZ_now * 100) / 100}",
+                         "after":  "{worldZ_now}",
+                         "preserved":  {
+                                           "onChange":  "{(newWorldZ) =\u003e {\r\n            if (!segment) return\r\n            const local = worldToSegLocal(worldX_now, newWorldZ, segment)\r\n            previewProp({ position: [local.localX, 0, local.localZ] })\r\n          }}",
+                                           "onCommit":  "{(newWorldZ) =\u003e commitWorldPosition(worldX_now, newWorldZ)}",
+                                           "min":  "{Math.round(worldMinZ * 10) / 10}",
+                                           "max":  "{Math.round(worldMaxZ * 10) / 10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  570,
+                         "label":  "\"Overhang\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.capOverhang ?? 0.04) * 1000) / 1000}",
+                         "after":  "{(node.capOverhang ?? 0.04)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ capOverhang: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ capOverhang: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  582,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.capThickness ?? 0.08) * 1000) / 1000}",
+                         "after":  "{(node.capThickness ?? 0.08)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ capThickness: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ capThickness: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  613,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.shoulderHeight ?? 0.5) * 100) / 100}",
+                         "after":  "{(node.shoulderHeight ?? 0.5)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ shoulderHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ shoulderHeight: v })}",
+                                           "min":  "{0.1}",
+                                           "max":  "{3}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  625,
+                         "label":  "\"Extent\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.shoulderExtent ?? 0.1) * 100) / 100}",
+                         "after":  "{(node.shoulderExtent ?? 0.1)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ shoulderExtent: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ shoulderExtent: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.5}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  666,
+                         "label":  "\"Diameter\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.flueDiameter ?? 0.22) * 100) / 100}",
+                         "after":  "{(node.flueDiameter ?? 0.22)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ flueDiameter: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ flueDiameter: v })}",
+                                           "min":  "{0.05}",
+                                           "max":  "{Math.max(0.4, node.width)}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  678,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.flueHeight ?? 0.3) * 100) / 100}",
+                         "after":  "{(node.flueHeight ?? 0.3)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ flueHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ flueHeight: v })}",
+                                           "min":  "{0.05}",
+                                           "max":  "{1.5}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  703,
+                         "label":  "\"Wall Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.flueWallThickness ?? 0.02) * 1000) / 1000}",
+                         "after":  "{(node.flueWallThickness ?? 0.02)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ flueWallThickness: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ flueWallThickness: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{Math.max(0.1, (node.flueDiameter ?? 0.22) / 2 - 0.01)}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  734,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.bandHeight ?? 0.1) * 100) / 100}",
+                         "after":  "{(node.bandHeight ?? 0.1)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ bandHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ bandHeight: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{0.4}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  746,
+                         "label":  "\"Extent\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.bandExtent ?? 0.04) * 1000) / 1000}",
+                         "after":  "{(node.bandExtent ?? 0.04)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ bandExtent: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ bandExtent: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  758,
+                         "label":  "\"Offset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.bandOffset ?? 0.4) * 100) / 100}",
+                         "after":  "{(node.bandOffset ?? 0.4)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ bandOffset: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ bandOffset: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{3}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  797,
+                         "label":  "\"Length\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.cricketLength ?? 0.6) * 100) / 100}",
+                         "after":  "{(node.cricketLength ?? 0.6)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ cricketLength: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ cricketLength: v })}",
+                                           "min":  "{0.1}",
+                                           "max":  "{2}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  809,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.cricketHeight ?? 0.4) * 100) / 100}",
+                         "after":  "{(node.cricketHeight ?? 0.4)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ cricketHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ cricketHeight: v })}",
+                                           "min":  "{0.05}",
+                                           "max":  "{1.5}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  839,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.panelDepth ?? 0.03) * 1000) / 1000}",
+                         "after":  "{(node.panelDepth ?? 0.03)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ panelDepth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ panelDepth: v })}",
+                                           "min":  "{0.005}",
+                                           "max":  "{0.15}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  851,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.panelHeight ?? 0.8) * 100) / 100}",
+                         "after":  "{(node.panelHeight ?? 0.8)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ panelHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ panelHeight: v })}",
+                                           "min":  "{0.1}",
+                                           "max":  "{3}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  863,
+                         "label":  "\"Top Offset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.panelOffsetTop ?? 0.15) * 100) / 100}",
+                         "after":  "{(node.panelOffsetTop ?? 0.15)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ panelOffsetTop: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ panelOffsetTop: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{2}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/chimney/panel.tsx",
+                         "line":  875,
+                         "label":  "\"Side Margin\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.panelMargin ?? 0.1) * 100) / 100}",
+                         "after":  "{(node.panelMargin ?? 0.1)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ panelMargin: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ panelMargin: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{Math.max(0.5, node.width / 2 - 0.05)}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/cupola/panel.tsx",
+                         "line":  166,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "min":  "{0.3}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/cupola/panel.tsx",
+                         "line":  178,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.depth * 100) / 100}",
+                         "after":  "{node.depth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ depth: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ depth: v })}",
+                                           "min":  "{0.3}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/cupola/panel.tsx",
+                         "line":  190,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "min":  "{0.4}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/cupola/panel.tsx",
+                         "line":  205,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[0] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[0] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [v, node.position[1] ?? 0, node.position[2] ?? 0] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [v, node.position[1] ?? 0, node.position[2] ?? 0] })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/cupola/panel.tsx",
+                         "line":  221,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[1] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[1] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [node.position[0] ?? 0, v, node.position[2] ?? 0] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [node.position[0] ?? 0, v, node.position[2] ?? 0] })\r\n          }",
+                                           "min":  "{Math.min(0, (node.position[1] ?? 0) - 0.5)}",
+                                           "max":  "{Math.max(\r\n            (segment?.wallHeight ?? 3) + (segment ? getActiveRoofHeight(segment) : 3) + 2,\r\n            (node.position[1] ?? 0) + 0.1,\r\n          )}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/cupola/panel.tsx",
+                         "line":  240,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[2] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[2] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [node.position[0] ?? 0, node.position[1] ?? 0, v] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [node.position[0] ?? 0, node.position[1] ?? 0, v] })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  603,
+                         "label":  "{\r\n            \u003c\u003e\r\n              X\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003ewall\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ position: [v, node.position[1], node.position[2]] })}",
+                                           "onCommit":  null,
+                                           "min":  "{-10}",
+                                           "max":  "{10}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  720,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{maxDoorWidth}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  731,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            handleUpdate({\r\n              height: v,\r\n              position: [node.position[0], v / 2, node.position[2]],\r\n              // Keep the handle at the same relative height as the door resizes,\r\n              // matching the height-resize arrow.\r\n              handleHeight: scaleHandleHeight(node.handleHeight, node.height, v),\r\n            })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{1.0}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  793,
+                         "label":  "\"Corner Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(cornerRadius * 100) / 100}",
+                         "after":  "{cornerRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewDoorUpdate(\u0027cornerRadius\u0027, v)}",
+                                           "onCommit":  "{(v) =\u003e commitDoorPreview(\u0027cornerRadius\u0027, v)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  810,
+                         "label":  "{label}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((openingTopRadii[index as number] ?? 0) * 100) / 100}",
+                         "after":  "{(openingTopRadii[index as number] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e setOpeningTopRadius(index as number, v)}",
+                                           "onCommit":  "{(v) =\u003e setOpeningTopRadius(index as number, v, true)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  825,
+                         "label":  "\"Reveal Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(openingRevealRadius * 1000) / 1000}",
+                         "after":  "{openingRevealRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewDoorUpdate(\u0027openingRevealRadius\u0027, v)}",
+                                           "onCommit":  "{(v) =\u003e commitDoorPreview(\u0027openingRevealRadius\u0027, v)}",
+                                           "min":  "{0}",
+                                           "max":  "{0.08}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  839,
+                         "label":  "\"Arch Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(archHeight * 100) / 100}",
+                         "after":  "{archHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ archHeight: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.05}",
+                                           "max":  "{node.height}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  890,
+                         "label":  "\"Corner Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(cornerRadius * 100) / 100}",
+                         "after":  "{cornerRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewDoorUpdate(\u0027cornerRadius\u0027, v)}",
+                                           "onCommit":  "{(v) =\u003e commitDoorPreview(\u0027cornerRadius\u0027, v)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  907,
+                         "label":  "{label}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((openingTopRadii[index as number] ?? 0) * 100) / 100}",
+                         "after":  "{(openingTopRadii[index as number] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e setOpeningTopRadius(index as number, v)}",
+                                           "onCommit":  "{(v) =\u003e setOpeningTopRadius(index as number, v, true)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  922,
+                         "label":  "\"Reveal Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(openingRevealRadius * 1000) / 1000}",
+                         "after":  "{openingRevealRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewDoorUpdate(\u0027openingRevealRadius\u0027, v)}",
+                                           "onCommit":  "{(v) =\u003e commitDoorPreview(\u0027openingRevealRadius\u0027, v)}",
+                                           "min":  "{0}",
+                                           "max":  "{0.08}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  936,
+                         "label":  "\"Arch Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(archHeight * 100) / 100}",
+                         "after":  "{archHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ archHeight: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.05}",
+                                           "max":  "{node.height}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  955,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.frameThickness * 1000) / 1000}",
+                         "after":  "{node.frameThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ frameThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.01}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  965,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.frameDepth * 1000) / 1000}",
+                         "after":  "{node.frameDepth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ frameDepth: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.01}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  980,
+                         "label":  "\"Horizontal\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.contentPadding[0] * 1000) / 1000}",
+                         "after":  "{node.contentPadding[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ contentPadding: [v, node.contentPadding[1]] })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  990,
+                         "label":  "\"Vertical\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.contentPadding[1] * 1000) / 1000}",
+                         "after":  "{node.contentPadding[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ contentPadding: [node.contentPadding[0], v] })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  1047,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.thresholdHeight * 1000) / 1000}",
+                         "after":  "{node.thresholdHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ thresholdHeight: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.005}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  1073,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.handleHeight * 100) / 100}",
+                         "after":  "{node.handleHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ handleHeight: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{node.height - 0.1}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  1117,
+                         "label":  "\"Bar Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.panicBarHeight * 100) / 100}",
+                         "after":  "{node.panicBarHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ panicBarHeight: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{node.height - 0.1}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  1201,
+                         "label":  "\"Divider\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(seg.dividerThickness * 1000) / 1000}",
+                         "after":  "{seg.dividerThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n                            const updated = node.segments.map((s, idx) =\u003e\r\n                              idx === i ? { ...s, dividerThickness: v } : s,\r\n                            )\r\n                            handleUpdate({ segments: updated })\r\n                          }}",
+                                           "onCommit":  null,
+                                           "min":  "{0.005}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  1221,
+                         "label":  "\"Inset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(seg.panelInset * 1000) / 1000}",
+                         "after":  "{seg.panelInset}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n                            const updated = node.segments.map((s, idx) =\u003e\r\n                              idx === i ? { ...s, panelInset: v } : s,\r\n                            )\r\n                            handleUpdate({ segments: updated })\r\n                          }}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/door/panel.tsx",
+                         "line":  1236,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(seg.panelDepth * 1000) / 1000}",
+                         "after":  "{seg.panelDepth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n                            const updated = node.segments.map((s, idx) =\u003e\r\n                              idx === i ? { ...s, panelDepth: v } : s,\r\n                            )\r\n                            handleUpdate({ segments: updated })\r\n                          }}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/dormer/panel-position-section.tsx",
+                         "line":  169,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(worldX_now * 100) / 100}",
+                         "after":  "{worldX_now}",
+                         "preserved":  {
+                                           "onChange":  "{(newWorldX) =\u003e {\r\n          if (!segment) return\r\n          const local = worldToSegLocal(newWorldX, worldZ_now, segment)\r\n          previewProp({ position: [local.localX, py ?? 0, local.localZ] })\r\n        }}",
+                                           "onCommit":  "{(newWorldX) =\u003e commitWorldPosition(newWorldX, worldZ_now)}",
+                                           "min":  "{Math.round(worldMinX * 10) / 10}",
+                                           "max":  "{Math.round(worldMaxX * 10) / 10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/dormer/panel-position-section.tsx",
+                         "line":  185,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(worldZ_now * 100) / 100}",
+                         "after":  "{worldZ_now}",
+                         "preserved":  {
+                                           "onChange":  "{(newWorldZ) =\u003e {\r\n          if (!segment) return\r\n          const local = worldToSegLocal(worldX_now, newWorldZ, segment)\r\n          previewProp({ position: [local.localX, py ?? 0, local.localZ] })\r\n        }}",
+                                           "onCommit":  "{(newWorldZ) =\u003e commitWorldPosition(worldX_now, newWorldZ)}",
+                                           "min":  "{Math.round(worldMinZ * 10) / 10}",
+                                           "max":  "{Math.round(worldMaxZ * 10) / 10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/dormer/panel.tsx",
+                         "line":  295,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ width: v })}",
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/dormer/panel.tsx",
+                         "line":  307,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.depth * 100) / 100}",
+                         "after":  "{node.depth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ depth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ depth: v })}",
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/dormer/panel.tsx",
+                         "line":  319,
+                         "label":  "\"Wall Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ height: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/dormer/panel.tsx",
+                         "line":  331,
+                         "label":  "{node.roofType === \u0027shed\u0027 ? \u0027Pitch Rise\u0027 : \u0027Roof Height\u0027}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.roofHeight * 100) / 100}",
+                         "after":  "{node.roofHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ roofHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ roofHeight: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{3}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                         "line":  185,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "min":  "{0.4}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                         "line":  197,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.depth * 100) / 100}",
+                         "after":  "{node.depth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ depth: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ depth: v })}",
+                                           "min":  "{0.2}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                         "line":  209,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "min":  "{0.08}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.02}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                         "line":  224,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[0] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[0] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [v, node.position[1] ?? 0, node.position[2] ?? 0] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [v, node.position[1] ?? 0, node.position[2] ?? 0] })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                         "line":  240,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[1] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[1] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [node.position[0] ?? 0, v, node.position[2] ?? 0] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [node.position[0] ?? 0, v, node.position[2] ?? 0] })\r\n          }",
+                                           "min":  "{Math.min(0, (node.position[1] ?? 0) - 0.5)}",
+                                           "max":  "{Math.max(\r\n            (segment?.wallHeight ?? 3) + (segment ? getActiveRoofHeight(segment) : 3) + 2,\r\n            (node.position[1] ?? 0) + 0.1,\r\n          )}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/eyebrow-vent/panel.tsx",
+                         "line":  259,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[2] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[2] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [node.position[0] ?? 0, node.position[1] ?? 0, v] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [node.position[0] ?? 0, node.position[1] ?? 0, v] })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/fence/inspector-editors.tsx",
+                         "line":  75,
+                         "label":  "\"Curve\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(curveOffset * 100) / 100}",
+                         "after":  "{curveOffset}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e onUpdate({ curveOffset: normalizeWallCurveOffset(node, value) })}",
+                                           "onCommit":  null,
+                                           "min":  "{-Math.max(0.01, maxCurveOffset)}",
+                                           "max":  "{Math.max(0.01, maxCurveOffset)}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/item/panel.tsx",
+                         "line":  109,
+                         "label":  "{\r\n            \u003c\u003e\r\n              X\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e\r\n            handleUpdate({ position: [value, node.position[1], node.position[2]] })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{node.position[0] - 2}",
+                                           "max":  "{node.position[0] + 2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/item/panel.tsx",
+                         "line":  125,
+                         "label":  "{\r\n            \u003c\u003e\r\n              Y\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e\r\n            handleUpdate({ position: [node.position[0], value, node.position[2]] })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{node.position[1] - 2}",
+                                           "max":  "{node.position[1] + 2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/item/panel.tsx",
+                         "line":  141,
+                         "label":  "{\r\n            \u003c\u003e\r\n              Z\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e\r\n            handleUpdate({ position: [node.position[0], node.position[1], value] })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{node.position[2] - 2}",
+                                           "max":  "{node.position[2] + 2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                         "line":  158,
+                         "label":  "\"Length\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.length * 100) / 100}",
+                         "after":  "{node.length}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ length: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ length: v })}",
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                         "line":  170,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "min":  "{0.1}",
+                                           "max":  "{0.6}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                         "line":  182,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 1000) / 1000}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "min":  "{0.03}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                         "line":  197,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[0] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[0] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [v, node.position[1] ?? 0, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [v, node.position[1] ?? 0, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "min":  "{-halfW}",
+                                           "max":  "{halfW}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                         "line":  217,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[1] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[1] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [node.position[0] ?? 0, v, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [node.position[0] ?? 0, v, node.position[2] ?? 0],\r\n            })\r\n          }",
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/ridge-vent/panel.tsx",
+                         "line":  235,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[2] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[2] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [node.position[0] ?? 0, node.position[1] ?? 0, v],\r\n            })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({\r\n              position: [node.position[0] ?? 0, node.position[1] ?? 0, v],\r\n            })\r\n          }",
+                                           "min":  "{-halfD}",
+                                           "max":  "{halfD}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  392,
+                         "label":  "\"Diameter\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ width: v, depth: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.5}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  404,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.5}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  414,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.depth * 100) / 100}",
+                         "after":  "{node.depth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ depth: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.5}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  470,
+                         "label":  "\"Wall\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.wallHeight * 100) / 100}",
+                         "after":  "{node.wallHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ wallHeight: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  590,
+                         "label":  "\"Top Rake Thick.\"",
+                         "unit":  "\"m\"",
+                         "before":  "{\r\n              Math.round(\r\n                (node.dutchTopRakeThickness ?? ROOF_SHAPE_DEFAULTS.dutchTopRakeThickness) * 100,\r\n              ) / 100\r\n            }",
+                         "after":  "{(node.dutchTopRakeThickness ?? ROOF_SHAPE_DEFAULTS.dutchTopRakeThickness)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ dutchTopRakeThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.01}",
+                                           "max":  "{0.5}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  604,
+                         "label":  "\"Top Rake Length\"",
+                         "unit":  "\"m\"",
+                         "before":  "{\r\n              Math.round((node.dutchGabletRake ?? ROOF_SHAPE_DEFAULTS.dutchGabletRake) * 100) / 100\r\n            }",
+                         "after":  "{(node.dutchGabletRake ?? ROOF_SHAPE_DEFAULTS.dutchGabletRake)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ dutchGabletRake: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{3}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  620,
+                         "label":  "\"Wall Thick.\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.wallThickness * 100) / 100}",
+                         "after":  "{node.wallThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ wallThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.05}",
+                                           "max":  "{1}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  630,
+                         "label":  "\"Deck Thick.\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.deckThickness * 100) / 100}",
+                         "after":  "{node.deckThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ deckThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.04}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  640,
+                         "label":  "\"Overhang\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.overhang * 100) / 100}",
+                         "after":  "{node.overhang}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ overhang: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{1}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  650,
+                         "label":  "\"Shingle Thick.\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.shingleThickness * 100) / 100}",
+                         "after":  "{node.shingleThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ shingleThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.02}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  663,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[0] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  675,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[1] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof-segment/panel.tsx",
+                         "line":  687,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[2] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof/panel.tsx",
+                         "line":  274,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[0] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof/panel.tsx",
+                         "line":  286,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[1] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/roof/panel.tsx",
+                         "line":  298,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[2] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  290,
+                         "label":  "\"Glass Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.glassThickness ?? 0.01) * 1000) / 1000}",
+                         "after":  "{(node.glassThickness ?? 0.01)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ glassThickness: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ glassThickness: v })}",
+                                           "min":  "{0.002}",
+                                           "max":  "{0.05}",
+                                           "step":  "{0.001}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  304,
+                         "label":  "\"Lantern Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.lanternHeight ?? 0.25) * 1000) / 1000}",
+                         "after":  "{(node.lanternHeight ?? 0.25)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ lanternHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ lanternHeight: v })}",
+                                           "min":  "{0.05}",
+                                           "max":  "{1.0}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  375,
+                         "label":  "\"Motor Housing\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.motorHousingSize ?? 0.08) * 1000) / 1000}",
+                         "after":  "{(node.motorHousingSize ?? 0.08)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ motorHousingSize: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ motorHousingSize: v })}",
+                                           "min":  "{0.03}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  412,
+                         "label":  "\"Track Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.trackWidth ?? 0.045) * 1000) / 1000}",
+                         "after":  "{(node.trackWidth ?? 0.045)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ trackWidth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ trackWidth: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{0.12}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  429,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ width: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ width: v })}",
+                                           "min":  "{0.3}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  441,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ height: v })}",
+                                           "min":  "{0.3}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  456,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.frameThickness ?? 0.05) * 1000) / 1000}",
+                         "after":  "{(node.frameThickness ?? 0.05)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ frameThickness: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ frameThickness: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  468,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.frameDepth ?? 0.08) * 1000) / 1000}",
+                         "after":  "{(node.frameDepth ?? 0.08)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ frameDepth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ frameDepth: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  480,
+                         "label":  "\"Cutout Offset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.cutoutOffset ?? 0.01) * 1000) / 1000}",
+                         "after":  "{(node.cutoutOffset ?? 0.01)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ cutoutOffset: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ cutoutOffset: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  504,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.curbHeight ?? 0.1) * 1000) / 1000}",
+                         "after":  "{(node.curbHeight ?? 0.1)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ curbHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ curbHeight: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  520,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(worldX_now * 100) / 100}",
+                         "after":  "{worldX_now}",
+                         "preserved":  {
+                                           "onChange":  "{(newWorldX) =\u003e {\r\n            if (!segment) return\r\n            const local = worldToSegLocal(newWorldX, worldZ_now, segment)\r\n            previewProp({ position: [local.localX, 0, local.localZ] })\r\n          }}",
+                                           "onCommit":  "{(newWorldX) =\u003e commitWorldPosition(newWorldX, worldZ_now)}",
+                                           "min":  "{Math.round(worldMinX * 10) / 10}",
+                                           "max":  "{Math.round(worldMaxX * 10) / 10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/skylight/panel.tsx",
+                         "line":  536,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(worldZ_now * 100) / 100}",
+                         "after":  "{worldZ_now}",
+                         "preserved":  {
+                                           "onChange":  "{(newWorldZ) =\u003e {\r\n            if (!segment) return\r\n            const local = worldToSegLocal(worldX_now, newWorldZ, segment)\r\n            previewProp({ position: [local.localX, 0, local.localZ] })\r\n          }}",
+                                           "onCommit":  "{(newWorldZ) =\u003e commitWorldPosition(worldX_now, newWorldZ)}",
+                                           "min":  "{Math.round(worldMinZ * 10) / 10}",
+                                           "max":  "{Math.round(worldMaxZ * 10) / 10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/slab/panel.tsx",
+                         "line":  284,
+                         "label":  "{node.recessed ? \u0027Floor\u0027 : \u0027Surface\u0027}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.elevation * 1000) / 1000}",
+                         "after":  "{node.elevation}",
+                         "preserved":  {
+                                           "onChange":  "{handleElevationChange}",
+                                           "onCommit":  null,
+                                           "min":  "{-3}",
+                                           "max":  "{20}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/slab/panel.tsx",
+                         "line":  295,
+                         "label":  "{node.recessed ? \u0027Rim\u0027 : \u0027Base\u0027}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(getSlabAnchorElevation(node) * 1000) / 1000}",
+                         "after":  "{getSlabAnchorElevation(node)}",
+                         "preserved":  {
+                                           "onChange":  "{handleAnchorChange}",
+                                           "onCommit":  null,
+                                           "min":  "{-3}",
+                                           "max":  "{20}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/slab/panel.tsx",
+                         "line":  307,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(getSlabRecessDepth(node) * 100) / 100}",
+                         "after":  "{getSlabRecessDepth(node)}",
+                         "preserved":  {
+                                           "onChange":  "{handleRecessDepthChange}",
+                                           "onCommit":  null,
+                                           "min":  "{MIN_SLAB_THICKNESS}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/slab/panel.tsx",
+                         "line":  318,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.thickness ?? 0.05) * 100) / 100}",
+                         "after":  "{(node.thickness ?? 0.05)}",
+                         "preserved":  {
+                                           "onChange":  "{handleThicknessChange}",
+                                           "onCommit":  null,
+                                           "min":  "{MIN_SLAB_THICKNESS}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  248,
+                         "label":  "\"Gap X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.gapX, 0.02) * 1000) / 1000}",
+                         "after":  "{num(node.gapX, 0.02)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ gapX: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ gapX: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  260,
+                         "label":  "\"Gap Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.gapY, 0.02) * 1000) / 1000}",
+                         "after":  "{num(node.gapY, 0.02)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ gapY: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ gapY: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.2}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  279,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.panelWidth, 1) * 100) / 100}",
+                         "after":  "{num(node.panelWidth, 1)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ panelWidth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ panelWidth: v })}",
+                                           "min":  "{0.3}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  291,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.panelHeight, 1.65) * 100) / 100}",
+                         "after":  "{num(node.panelHeight, 1.65)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ panelHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ panelHeight: v })}",
+                                           "min":  "{0.3}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  306,
+                         "label":  "\"Frame thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.frameThickness, 0.04) * 1000) / 1000}",
+                         "after":  "{num(node.frameThickness, 0.04)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ frameThickness: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ frameThickness: v })}",
+                                           "min":  "{0.005}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  318,
+                         "label":  "\"Frame depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.frameDepth, 0.04) * 1000) / 1000}",
+                         "after":  "{num(node.frameDepth, 0.04)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ frameDepth: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ frameDepth: v })}",
+                                           "min":  "{0.005}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/solar-panel/panel.tsx",
+                         "line":  355,
+                         "label":  "\"Standoff\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(num(node.standoffHeight, 0.05) * 1000) / 1000}",
+                         "after":  "{num(node.standoffHeight, 0.05)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ standoffHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e commitProp({ standoffHeight: v })}",
+                                           "min":  "{0}",
+                                           "max":  "{0.3}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/spawn/panel.tsx",
+                         "line":  104,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e\r\n            handleUpdate({ position: [value, node.position[1], node.position[2]] })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{node.position[0] - 2}",
+                                           "max":  "{node.position[0] + 2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/spawn/panel.tsx",
+                         "line":  116,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e\r\n            handleUpdate({ position: [node.position[0], value, node.position[2]] })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{node.position[1] - 2}",
+                                           "max":  "{node.position[1] + 2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/spawn/panel.tsx",
+                         "line":  128,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e\r\n            handleUpdate({ position: [node.position[0], node.position[1], value] })\r\n          }",
+                                           "onCommit":  null,
+                                           "min":  "{node.position[2] - 2}",
+                                           "max":  "{node.position[2] + 2}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  161,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ width: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  171,
+                         "label":  "\"Length\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.length * 100) / 100}",
+                         "after":  "{node.length}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ length: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  183,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.5}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  215,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.thickness ?? 0.25) * 100) / 100}",
+                         "after":  "{(node.thickness ?? 0.25)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ thickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.05}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  230,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[0] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  242,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[1] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair-segment/panel.tsx",
+                         "line":  254,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[2] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  379,
+                         "label":  "\"Opening Offset\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.openingOffset ?? 0) * 100) / 100}",
+                         "after":  "{(node.openingOffset ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ openingOffset: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  "{0.5}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  406,
+                         "label":  "\"Top Landing\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.topLandingDepth ?? 0.9) * 100) / 100}",
+                         "after":  "{(node.topLandingDepth ?? 0.9)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ topLandingDepth: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.3}",
+                                           "max":  "{5}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  454,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.width ?? 1) * 100) / 100}",
+                         "after":  "{(node.width ?? 1)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ width: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.4}",
+                                           "max":  "{10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  464,
+                         "label":  "\"Rise\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(resolveStairTotalRise(node, nodes) * 100) / 100}",
+                         "after":  "{resolveStairTotalRise(node, nodes)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ totalRise: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.2}",
+                                           "max":  "{10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  492,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.thickness ?? 0.25) * 100) / 100}",
+                         "after":  "{(node.thickness ?? 0.25)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ thickness: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.02}",
+                                           "max":  "{1}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  503,
+                         "label":  "\"Inner Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.innerRadius ?? 0.9) * 100) / 100}",
+                         "after":  "{(node.innerRadius ?? 0.9)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ innerRadius: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{node.stairType === \u0027spiral\u0027 ? 0.05 : 0.2}",
+                                           "max":  "{10}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  541,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[0] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  553,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[1] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  565,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[2] * 100) / 100}",
+                         "after":  "{node.position[2]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e {\r\n            const pos = [...node.position] as [number, number, number]\r\n            pos[2] = v\r\n            handleUpdate({ position: pos })\r\n          }}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/stair/panel.tsx",
+                         "line":  614,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.railingHeight ?? 0.92) * 100) / 100}",
+                         "after":  "{(node.railingHeight ?? 0.92)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ railingHeight: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.7}",
+                                           "max":  "{1.4}",
+                                           "step":  "{0.02}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                         "line":  182,
+                         "label":  "\"Diameter\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.diameter * 100) / 100}",
+                         "after":  "{node.diameter}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ diameter: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ diameter: v })}",
+                                           "min":  "{0.15}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                         "line":  194,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ height: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ height: v })}",
+                                           "min":  "{0.2}",
+                                           "max":  "{1000}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                         "line":  206,
+                         "label":  "\"Neck Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.neckHeight ?? 0.09) * 100) / 100}",
+                         "after":  "{(node.neckHeight ?? 0.09)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e previewProp({ neckHeight: v })}",
+                                           "onCommit":  "{(v) =\u003e handleUpdate({ neckHeight: v })}",
+                                           "min":  "{0.02}",
+                                           "max":  "{Math.max(0.04, node.height * 0.5)}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                         "line":  255,
+                         "label":  "\"X\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[0] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[0] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [v, node.position[1] ?? 0, node.position[2] ?? 0] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [v, node.position[1] ?? 0, node.position[2] ?? 0] })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.width ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                         "line":  271,
+                         "label":  "\"Y\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[1] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[1] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [node.position[0] ?? 0, v, node.position[2] ?? 0] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [node.position[0] ?? 0, v, node.position[2] ?? 0] })\r\n          }",
+                                           "min":  "{Math.min(0, (node.position[1] ?? 0) - 0.5)}",
+                                           "max":  "{Math.max(\r\n            (segment?.wallHeight ?? 3) + (segment ? getActiveRoofHeight(segment) : 3) + 2,\r\n            (node.position[1] ?? 0) + 0.1,\r\n          )}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/turbine-vent/panel.tsx",
+                         "line":  290,
+                         "label":  "\"Z\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.position[2] ?? 0) * 100) / 100}",
+                         "after":  "{(node.position[2] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e\r\n            previewProp({ position: [node.position[0] ?? 0, node.position[1] ?? 0, v] })\r\n          }",
+                                           "onCommit":  "{(v) =\u003e\r\n            handleUpdate({ position: [node.position[0] ?? 0, node.position[1] ?? 0, v] })\r\n          }",
+                                           "min":  "{-Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "max":  "{Math.round(((segment?.depth ?? 10) / 2) * 100) / 100}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  528,
+                         "label":  "{\r\n            \u003c\u003e\r\n              X\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[0] * 100) / 100}",
+                         "after":  "{node.position[0]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ position: [v, node.position[1], node.position[2]] })}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  540,
+                         "label":  "{\r\n            \u003c\u003e\r\n              Y\u003csub className=\"ml-[1px] text-[11px] opacity-70\"\u003epos\u003c/sub\u003e\r\n            \u003c/\u003e\r\n          }",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.position[1] * 100) / 100}",
+                         "after":  "{node.position[1]}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ position: [node.position[0], v, node.position[2]] })}",
+                                           "onCommit":  null,
+                                           "min":  null,
+                                           "max":  null,
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  565,
+                         "label":  "\"Width\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.width * 100) / 100}",
+                         "after":  "{node.width}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate(getDimensionUpdates({ width: v }))}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  null,
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  575,
+                         "label":  "\"Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.height * 100) / 100}",
+                         "after":  "{node.height}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate(getDimensionUpdates({ height: v }))}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  null,
+                                           "step":  "{0.1}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  625,
+                         "label":  "\"Corner Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(cornerRadius * 100) / 100}",
+                         "after":  "{cornerRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e previewWindowUpdate(\u0027cornerRadius\u0027, value)}",
+                                           "onCommit":  "{(value) =\u003e commitWindowPreview(\u0027cornerRadius\u0027, value)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  644,
+                         "label":  "{label}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((openingCornerRadii[index as number] ?? 0) * 100) / 100}",
+                         "after":  "{(openingCornerRadii[index as number] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e setOpeningCornerRadius(index as number, value)}",
+                                           "onCommit":  "{(value) =\u003e setOpeningCornerRadius(index as number, value, true)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  659,
+                         "label":  "\"Reveal Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(openingRevealRadius * 1000) / 1000}",
+                         "after":  "{openingRevealRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e previewWindowUpdate(\u0027openingRevealRadius\u0027, value)}",
+                                           "onCommit":  "{(value) =\u003e commitWindowPreview(\u0027openingRevealRadius\u0027, value)}",
+                                           "min":  "{0}",
+                                           "max":  "{0.08}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  674,
+                         "label":  "\"Arch Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(archHeight * 100) / 100}",
+                         "after":  "{archHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ archHeight: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.05}",
+                                           "max":  "{Math.max(0.05, node.height)}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  716,
+                         "label":  "\"Corner Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(cornerRadius * 100) / 100}",
+                         "after":  "{cornerRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e previewWindowUpdate(\u0027cornerRadius\u0027, value)}",
+                                           "onCommit":  "{(value) =\u003e commitWindowPreview(\u0027cornerRadius\u0027, value)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  735,
+                         "label":  "{label}",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((openingCornerRadii[index as number] ?? 0) * 100) / 100}",
+                         "after":  "{(openingCornerRadii[index as number] ?? 0)}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e setOpeningCornerRadius(index as number, value)}",
+                                           "onCommit":  "{(value) =\u003e setOpeningCornerRadius(index as number, value, true)}",
+                                           "min":  "{0}",
+                                           "max":  "{maxRoundedRadius}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  750,
+                         "label":  "\"Reveal Radius\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(openingRevealRadius * 1000) / 1000}",
+                         "after":  "{openingRevealRadius}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e previewWindowUpdate(\u0027openingRevealRadius\u0027, value)}",
+                                           "onCommit":  "{(value) =\u003e commitWindowPreview(\u0027openingRevealRadius\u0027, value)}",
+                                           "min":  "{0}",
+                                           "max":  "{0.08}",
+                                           "step":  "{0.005}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  765,
+                         "label":  "\"Arch Height\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(archHeight * 100) / 100}",
+                         "after":  "{archHeight}",
+                         "preserved":  {
+                                           "onChange":  "{(value) =\u003e handleUpdate({ archHeight: value })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.05}",
+                                           "max":  "{Math.max(0.05, node.height)}",
+                                           "step":  "{0.05}",
+                                           "precision":  "{2}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  785,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.frameThickness * 1000) / 1000}",
+                         "after":  "{node.frameThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ frameThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  null,
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  794,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.frameDepth * 1000) / 1000}",
+                         "after":  "{node.frameDepth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ frameDepth: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  null,
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  852,
+                         "label":  "\"Divider\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.columnDividerThickness ?? 0.03) * 1000) / 1000}",
+                         "after":  "{(node.columnDividerThickness ?? 0.03)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ columnDividerThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.005}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  885,
+                         "label":  "\"Divider\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round((node.rowDividerThickness ?? 0.03) * 1000) / 1000}",
+                         "after":  "{(node.rowDividerThickness ?? 0.03)}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ rowDividerThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0.005}",
+                                           "max":  "{0.1}",
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  910,
+                         "label":  "\"Depth\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.sillDepth * 1000) / 1000}",
+                         "after":  "{node.sillDepth}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ sillDepth: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  null,
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     },
+                     {
+                         "file":  "packages/nodes/src/window/panel.tsx",
+                         "line":  919,
+                         "label":  "\"Thickness\"",
+                         "unit":  "\"m\"",
+                         "before":  "{Math.round(node.sillThickness * 1000) / 1000}",
+                         "after":  "{node.sillThickness}",
+                         "preserved":  {
+                                           "onChange":  "{(v) =\u003e handleUpdate({ sillThickness: v })}",
+                                           "onCommit":  null,
+                                           "min":  "{0}",
+                                           "max":  null,
+                                           "step":  "{0.01}",
+                                           "precision":  "{3}"
+                                       }
+                     }
+                 ],
+    "baseCommit":  "c41c39aaedda1b2888c23913834414c86ea49fc6",
+    "scope":  "178 literal meter value pre-rounding sites in 26 files. The existing wall panel uses a separate explicit meter/foot display-value path; it was audited but not part of this non-wall migration."
+}

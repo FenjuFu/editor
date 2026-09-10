@@ -1,0 +1,37 @@
+{
+  "checks": [
+    "millimeter readout door",
+    "millimeter readout window",
+    "millimeter readout roof",
+    "millimeter readout column",
+    "millimeter readout slab",
+    "millimeter readout fence",
+    "millimeter readout metric",
+    "readout keeps meter storage",
+    "SliderControl bare millimeters",
+    "SliderControl explicit metric compound",
+    "MetricControl bare millimeters",
+    "MetricControl explicit feet in millimeter mode",
+    "stored-meter maximum clamp",
+    "stored-meter minimum clamp",
+    "millimeter keyboard step preserves 0.05 meter increment",
+    "millimeter pointer drag preserves physical step",
+    "invalid input preserves stored value",
+    "preference switch does not mutate scene values",
+    "imperial bare feet remains supported",
+    "meter input remains supported",
+    "angle stays in degrees",
+    "drag history boundary remains balanced"
+  ],
+  "errors": [],
+  "scope": "Actual SliderControl and MetricControl with the actual viewer preference store; scene-history API stubbed and parent values recorded in meters. Component interaction validation, not full editor E2E.",
+  "values": {
+    "door": 2.5,
+    "window": 1.2,
+    "roof": 2.5,
+    "column": 0.3,
+    "slab": 0.15,
+    "fence": 1.2,
+    "metric": 1.8288000000000002
+  }
+}

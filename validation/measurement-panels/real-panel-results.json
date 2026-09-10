@@ -1,0 +1,14 @@
+{
+  "scope": "Production RoofPanel, SliderControl, useViewer and useScene source stores. Unrelated action/presentation wrappers are test adapters.",
+  "enteredMillimeters": 2501,
+  "storedMeters": 2.501,
+  "originalPanelDisplay": 2500,
+  "fixedPanelDisplay": 2501,
+  "unitSwitchKeepsMeters": true,
+  "unchangedAxes": [
+    0,
+    0
+  ],
+  "unchangedRotation": 0,
+  "errors": []
+}
